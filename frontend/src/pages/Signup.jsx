@@ -2,13 +2,17 @@ import {Heading} from '../components/Heading';
 import { InputBox} from '../components/InputBox';
 import { Button } from '../components/Button';
 import { ButtomWarning } from '../components/ButtomWarning';
+import { Navbar } from '../components/Navbar';
 
 
 
 export const Signup = ()=>{
     return(
+           <div> 
+                <Navbar/>
             <div className='flex justify-center'>
-                <div className='rounded-lg bg-white w-80 text-center p-2 h-max px-4'>
+                
+                <div className='rounded-lg  w-70 text-center p-2 h-max px-4'>
             <Heading title="Signup" label={"Sign up"}/>
         
 
@@ -25,9 +29,10 @@ export const Signup = ()=>{
                 console.log(e.target.value)
                     }}/>
                 
-            <Button />
+            <Button label={"Sign Up"} />
             <ButtomWarning label={"Alredy have an account?" } buttonText={"SignIn"} to={'/signin'}/>
                 </div>
             </div>
+        </div>
          )
 }
