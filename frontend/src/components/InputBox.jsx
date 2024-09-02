@@ -2,11 +2,12 @@ export const InputBox =({ onChange ,label})=>{
     return <div className="flex mb-4 items-center justify-center  ">
         <label className="relative">
             <input onChange={onChange} type="text" className="px-4 py-2 text-sm outline-none border-2 border-gray-300 rounded
-            focus:border-gray-300 duration-200 peer focus:border-indigo-700 bg-inherit" />
+            focus:border-gray-300 duration-200 peer focus:border-indigo-700 bg-inherit" required/>
+            
             
             <span className="absolute left-2 top-2 px-1 text-sm tracking-wide bg-white
             peer-focus:text-indigo-800 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5
-            peer-placeholder-shown:text-sm">{label}</span>
+            peer-placeholder-shown:text-sm peer-valid:text-sm peer-valid:-translate-y-5">{label}</span>
             </label>
     </div>
 }
