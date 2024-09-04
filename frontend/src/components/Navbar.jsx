@@ -33,9 +33,9 @@ export const Navbar = () => {
                         </button>
                     </div>
                     <div className={`md:flex items-center space-x-4 ${isOpen ? 'block' : 'hidden'} md:block`}>
-                        <Link to="/" className="text-gray-800 hover:text-gray-400">Home</Link>
-                        <Link to="/services" className="text-gray-500 hover:text-gray-400">Services</Link>
-                        <Link to="/contact" className="text-blue-400 hover:text-gray-400">Contact</Link>
+                        <Link to="/" className="text-blue-500 hover:text-gray-400">Home</Link>
+                        <Link to="/services" className="text-blue-500 hover:text-gray-400">Services</Link>
+                        <Link to="/signup" className="text-blue-500 hover:text-gray-400">Login</Link>
                     </div>
                 </div>
             </nav>
