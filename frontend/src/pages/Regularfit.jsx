@@ -2,6 +2,8 @@ import React from 'react';
 import {Card} from '../components/Card';
 import regularfit from '../A-tshirt/regularfit.jpg';
 import oversize from '../A-tshirt/oversize.jpg';
+
+
 export const RegularFit = () => {
   const products = [
     {
