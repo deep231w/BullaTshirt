@@ -5,15 +5,22 @@ const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 const User= require('../models/userModel');
 dotenv.config();
-const signupBody= zod.object({
+const signupBody = zod.object({
     email: zod.string().email(),
-    password: zod.string(),
+    password: zod.string().optional(), // Change to optional
     firstName: zod.string(),
-    lastName: zod.string() 
-})
+    lastName: zod.string(),
+    firebaseuid: zod.string().optional()
+});
 
 router.post('/signup', async (req, res) => {
+    console.log("Request Body:", req.body);
+
+    const {email ,firstName, lastName,password,firebaseuid} = req.body;
     const result = signupBody.safeParse(req.body);
+
+    console.log('Incoming Signup Data:', req.body);
+
     if (!result.success) {
         return res.status(400).json({
           error: 'Invalid input: ' + result.error.issues.map(issue => issue.message).join(', ')
@@ -28,10 +35,11 @@ router.post('/signup', async (req, res) => {
     }
 
     const user = await User.create({
-        email: req.body.email,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
+        email: email,
+        password: firebaseuid? null : password,
+        firstName: firstName,
+        lastName: lastName ,
+        firebaseuid: firebaseuid || null
     });
     
     const userId = user._id;

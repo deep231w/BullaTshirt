@@ -8,7 +8,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css'
 import { toast,ToastContainer } from "react-toastify";
-
+import { auth ,googleProvider  } from "../firebase-auth/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export const Signin =()=>{
             const navigate =useNavigate();

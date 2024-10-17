@@ -8,7 +8,7 @@ const userSchema= new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: false
     },
     firstName: {
         type: String,
@@ -17,7 +17,11 @@ const userSchema= new mongoose.Schema({
     lastName: {
         type: String,
         required: true,
-    }
+    }, 
+    firebaseuid: {
+        type: String,
+        required: true,
+    },
 },{
     timestamps: true // Automatically adds createdAt and updatedAt fields
   })

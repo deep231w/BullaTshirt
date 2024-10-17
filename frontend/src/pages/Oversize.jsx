@@ -10,7 +10,7 @@ export const Oversize = () => {
       image: oversize,
       title: 'oversize T-shirt',
       price: 25.99,
-    },
+    }, 
     {
       id: 2,
       image: regularfit,
