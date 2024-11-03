@@ -7,7 +7,7 @@ export const Card = ({ image, title, price, onQuickView }) => {
       <div className="p-4">
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         <p className="text-gray-600 mt-2">${price}</p>
-        <button
+        <button 
           onClick={onQuickView}
           className="mt-4 text-sm text-blue-500 hover:underline"
         >
