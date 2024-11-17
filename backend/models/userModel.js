@@ -20,7 +20,7 @@ const userSchema= new mongoose.Schema({
     }, 
     firebaseuid: {
         type: String,
-        required: true,
+        required: false,
     },
 },{
     timestamps: true // Automatically adds createdAt and updatedAt fields
