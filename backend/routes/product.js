@@ -9,7 +9,7 @@ const productSchema = zod.object({
     description: zod.string(),
     quantity: zod.string(),
     imageUrl: zod.string()
-});
+}); 
 
 //create product
 router.post("/",async(req, res) => {
